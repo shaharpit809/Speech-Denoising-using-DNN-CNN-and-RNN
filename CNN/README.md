@@ -8,7 +8,7 @@ After training the model, I tested the performance of the model by calculating t
 ## Speech Denoising using 2D CNN
 
 In this problem, since we are using a 2D CNN, we will consider both time and frequency of the audio. After applying STFT on the input audio files, I first take a matrix of [20 x 513] out of the entire STFT magnitude spectrogram (transposed). That's an input sample. Using this the 2D CNN estimates the cleaned-up spectrum that corresponds to the last (20th) input frame: \
-![]()
+![https://github.com/shaharpit809/Speech-Denoising-using-DNN-CNN-and-RNN/blob/master/img/2D_CNN_eqn1.PNG]()
 
 What it means is, the network takes all 20 current and previous input frames into account to predict the clean spectrum of the current frame, t + 19.
 Likewise, the next maxtrix will be another 20 frames shifted by one frame such that 19 frames overlap with the previous one. Since the original STFT spectrogram has 2,459 frames, we can create 2,440 such images as the training dataset.
